@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.fragment.app.activityViewModels
 import com.google.android.gms.nearby.exposurenotification.TemporaryExposureKey
 import de.rki.coronawarnapp.R
@@ -135,6 +136,9 @@ class SubmissionResultPositiveOtherWarningFragment : BaseFragment(),
         })
 
         submissionViewModel.submissionState.observeEvent(viewLifecycleOwner, {
+            if (it == ApiRequestState.STARTED) {
+                binding.progressBar.isVisible = true;
+            }
             if (it == ApiRequestState.SUCCESS) {
                 doNavigate(
                     SubmissionResultPositiveOtherWarningFragmentDirections

@@ -33,6 +33,21 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/submission_positive_other_warning_header" />
 
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:indeterminate="true"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                tools:visibility="invisible" />
+
             <Button
                 android:id="@+id/submission_positive_other_warning_button_next"
                 style="@style/buttonPrimary"
@@ -53,7 +68,7 @@
                 app:layout_constraintGuide_end="@dimen/guideline_action" />
 
             <include layout="@layout/merge_guidelines_side" />
-
+            
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
