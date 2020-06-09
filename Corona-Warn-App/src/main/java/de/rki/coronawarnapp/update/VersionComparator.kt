@@ -16,6 +16,8 @@ object VersionComparator {
         val versionToCompareMajor = versionToCompareParts[0].toInt()
         val versionToCompareMinor = versionToCompareParts[1].toInt()
         val versionToComparePatch = versionToCompareParts[2].toInt()
+        
+        // please check my attached comments to the following code block. bw, Dan =>
 
         if (versionToCompareMajor > currentVersionMajor) {
             isVersionOlder = true
